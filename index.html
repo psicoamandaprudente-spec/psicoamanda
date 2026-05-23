@@ -2,14 +2,12 @@
 <html lang="pt-BR">
 <head>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDBQGKPV61"></script>
-
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-NDBQGKPV61');
   </script>
 
@@ -31,7 +29,6 @@
       --text:#2E2E2E;
       --white:#ffffff;
       --shadow:0 20px 50px rgba(0,0,0,.08);
-      --radius:24px;
       --transition:.4s ease;
     }
 
@@ -217,8 +214,7 @@
 
     .problem-grid,
     .cards-3,
-    .testimonials,
-    .diff-grid{
+    .testimonials{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:24px;
@@ -226,12 +222,23 @@
 
     .problem-card,
     .persona-card,
-    .testimonial,
-    .diff{
+    .testimonial{
       background:white;
       border-radius:28px;
       padding:36px;
       box-shadow:var(--shadow);
+    }
+
+    .icon{
+      width:64px;
+      height:64px;
+      border-radius:18px;
+      background:rgba(22,140,136,.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.8rem;
+      margin-bottom:24px;
     }
 
     .about-neuro{
@@ -248,7 +255,6 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:60px;
-      align-items:center;
     }
 
     .about-box{
@@ -256,6 +262,10 @@
       border-radius:30px;
       padding:40px;
       margin-top:26px;
+    }
+
+    .dark{
+      background:#efe7de;
     }
 
     .steps{
@@ -286,8 +296,18 @@
       font-weight:700;
     }
 
-    .dark{
-      background:#efe7de;
+    .diff-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .diff{
+      background:white;
+      border-left:5px solid var(--gold);
+      border-radius:22px;
+      padding:30px;
+      box-shadow:var(--shadow);
     }
 
     .faq{
@@ -336,7 +356,6 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:50px;
-      align-items:center;
       box-shadow:var(--shadow);
     }
 
@@ -348,8 +367,6 @@
 
     .cta h2{
       color:white;
-      max-width:850px;
-      margin:auto;
       margin-bottom:26px;
     }
 
@@ -373,7 +390,6 @@
     footer h4{
       color:white;
       margin-bottom:18px;
-      font-size:1.4rem;
     }
 
     footer p{
@@ -393,15 +409,10 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0 15px 40px rgba(0,0,0,.2);
-      transition:var(--transition);
-      text-decoration:none;
       color:white;
-      font-size:2rem;
-    }
-
-    .whatsapp:hover{
-      transform:scale(1.08);
+      text-decoration:none;
+      font-size:32px;
+      box-shadow:0 15px 40px rgba(0,0,0,.2);
     }
 
     .reveal{
@@ -437,127 +448,334 @@
         display:none;
       }
 
-      h1{
-        font-size:3.3rem;
+      section{
+        padding:80px 0;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="container nav-wrap">
-    <div class="logo">
-      Amanda Prudente
+  <nav>
+    <div class="container nav-wrap">
+
+      <div class="logo">
+        Amanda Prudente
+      </div>
+
+      <div class="nav-links">
+        <a href="#avaliacao">Avaliação Neuro</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#faq">FAQ</a>
+        <a href="#psicoterapia">Psicoterapia</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div class="reveal">
+        <span class="badge">AVALIAÇÃO NEUROPSICOLÓGICA</span>
+
+        <h1>
+          Clareza que muda tudo:
+          descubra o que está por trás das dificuldades.
+        </h1>
+
+        <p>
+          Dificuldades escolares, desatenção, suspeita de TDAH, autismo,
+          ansiedade ou problemas emocionais podem ter explicações muito além
+          do que parece.
+        </p>
+
+        <a class="btn" href="https://wa.me/5511962581994" target="_blank">
+          Agendar conversa no WhatsApp
+        </a>
+      </div>
+
+      <div class="hero-card reveal">
+
+        <h3>
+          Um diagnóstico claro pode transformar anos de sofrimento em direção.
+        </h3>
+
+        <p style="color:rgba(255,255,255,.85)">
+          A avaliação oferece respostas, orientações e caminhos concretos
+          para escolas, médicos, famílias e para o próprio paciente.
+        </p>
+
+        <div class="hero-list">
+          <div>✔️ Relatório detalhado e personalizado</div>
+          <div>✔️ Processo completo e estruturado</div>
+          <div>✔️ Atendimento para crianças, adolescentes e adultos</div>
+          <div>✔️ Devolutiva humanizada e acolhedora</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="badge">SINAIS DE ALERTA</span>
+
+        <h2>
+          Você se identifica com algum desses cenários?
+        </h2>
+      </div>
+
+      <div class="problem-grid">
+
+        <div class="problem-card reveal">
+          <div class="icon">🧠</div>
+          <h3>Dificuldade de aprendizagem</h3>
+          <p>Baixo rendimento escolar e dificuldade em leitura, escrita ou matemática.</p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="icon">📚</div>
+          <h3>Suspeita de TDAH ou TEA</h3>
+          <p>Desatenção, impulsividade e dificuldade social.</p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="icon">⚡</div>
+          <h3>Problemas de atenção</h3>
+          <p>Esquecimentos frequentes e dificuldade de concentração.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about-neuro" id="avaliacao">
+
+    <div class="container about-grid">
+
+      <div class="reveal">
+
+        <span class="badge">ENTENDA O PROCESSO</span>
+
+        <h2>O que é a Avaliação Neuropsicológica?</h2>
+
+        <p style="color:rgba(255,255,255,.85)">
+          Um processo clínico completo que investiga funções cognitivas,
+          emocionais e comportamentais.
+        </p>
+
+      </div>
+
+      <div class="reveal">
+
+        <div class="about-box">
+          <h3>O que você recebe?</h3>
+
+          <p style="color:rgba(255,255,255,.85)">
+            Relatório técnico detalhado, orientações práticas e devolutiva humanizada.
+          </p>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="nav-links">
-      <a href="#avaliacao">Avaliação Neuro</a>
-      <a href="#como-funciona">Como Funciona</a>
-      <a href="#faq">FAQ</a>
-      <a href="#psicoterapia">Psicoterapia</a>
+  </section>
+
+  <section class="dark" id="como-funciona">
+
+    <div class="container">
+
+      <div class="section-head reveal">
+
+        <span class="badge">PROCESSO ESTRUTURADO</span>
+
+        <h2>
+          Como funciona a Avaliação Neuropsicológica?
+        </h2>
+
+      </div>
+
+      <div class="steps">
+
+        <div class="step reveal">
+          <div class="step-number">1</div>
+          <h3>Contato</h3>
+          <p>Conversa inicial.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">2</div>
+          <h3>Anamnese</h3>
+          <p>Entrevista aprofundada.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">3</div>
+          <h3>Testagens</h3>
+          <p>Aplicação de testes específicos.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">4</div>
+          <h3>Análise</h3>
+          <p>Integração dos dados clínicos.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">5</div>
+          <h3>Devolutiva</h3>
+          <p>Entrega do relatório final.</p>
+        </div>
+
+      </div>
+
     </div>
-  </div>
-</nav>
 
-<section class="hero">
-  <div class="container hero-grid">
+  </section>
 
-    <div class="reveal">
-      <span class="badge">AVALIAÇÃO NEUROPSICOLÓGICA</span>
+  <section id="psicoterapia" class="therapy">
 
-      <h1>
-        Clareza que muda tudo:
-        descubra o que está por trás das dificuldades.
-      </h1>
+    <div class="container">
 
-      <p>
-        Dificuldades escolares, desatenção, suspeita de TDAH, autismo,
-        ansiedade ou problemas emocionais podem ter explicações muito além
-        do que parece.
-      </p>
+      <div class="therapy-box reveal">
+
+        <div>
+
+          <span class="badge">PSICOTERAPIA</span>
+
+          <h2>
+            Psicoterapia com acolhimento e profundidade.
+          </h2>
+
+          <p style="margin-top:20px">
+            Atendimento para crianças, adolescentes e adultos.
+          </p>
+
+        </div>
+
+        <div>
+
+          <div class="about-box" style="background:var(--navy)">
+
+            <h3 style="color:white">
+              Atendimento humanizado
+            </h3>
+
+            <p style="color:rgba(255,255,255,.85)">
+              Cada processo terapêutico é construído respeitando a individualidade.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="cta">
+
+    <div class="container reveal">
+
+      <h2>
+        Dê o primeiro passo e agende uma conversa.
+      </h2>
 
       <a class="btn" href="https://wa.me/5511962581994" target="_blank">
-        Agendar conversa no WhatsApp
+        Falar no WhatsApp
       </a>
+
     </div>
 
-    <div class="hero-card reveal">
-      <h3>
-        Um diagnóstico claro pode transformar anos de sofrimento em direção.
-      </h3>
+  </section>
 
-      <p style="color:rgba(255,255,255,.85)">
-        A avaliação oferece respostas, direcionamento e segurança.
-      </p>
+  <footer>
 
-      <div class="hero-list">
-        <div>✔️ Relatório detalhado</div>
-        <div>✔️ Processo estruturado</div>
-        <div>✔️ Atendimento humanizado</div>
-        <div>✔️ Crianças, adolescentes e adultos</div>
+    <div class="container footer-grid">
+
+      <div>
+
+        <h4>Amanda Prudente</h4>
+
+        <p>
+          Psicóloga | Avaliação Neuropsicológica e Psicoterapia
+        </p>
+
+        <p>
+          CRP 06/234910
+        </p>
+
       </div>
+
+      <div>
+
+        <h4>Contato</h4>
+
+        <p>(11) 96258-1994</p>
+
+        <p>
+          psico.amanda.prudente@gmail.com
+        </p>
+
+      </div>
+
+      <div>
+
+        <h4>Localização</h4>
+
+        <p>Taboão da Serra - SP</p>
+
+        <p>
+          Atendimento presencial e online
+        </p>
+
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </footer>
 
-<footer>
-  <div class="container footer-grid">
+  <a class="whatsapp" href="https://wa.me/5511962581994" target="_blank">
+    💬
+  </a>
 
-    <div>
-      <h4>Amanda Prudente</h4>
-      <p>Psicóloga | Avaliação Neuropsicológica</p>
-      <p>CRP 06/234910</p>
-    </div>
+  <script>
 
-    <div>
-      <h4>Contato</h4>
-      <p>(11) 96258-1994</p>
-      <p>psico.amanda.prudente@gmail.com</p>
-    </div>
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    <div>
-      <h4>Localização</h4>
-      <p>Taboão da Serra - SP</p>
-      <p>Atendimento presencial e online</p>
-    </div>
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
 
-  </div>
-</footer>
+    const reveals = document.querySelectorAll('.reveal');
 
-<a class="whatsapp" href="https://wa.me/5511962581994" target="_blank">
-  💬
-</a>
+    function revealOnScroll(){
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const top = el.getBoundingClientRect().top;
 
-<script>
-
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-  item.querySelector('.faq-question')?.addEventListener('click', () => {
-    item.classList.toggle('active');
-  });
-});
-
-const reveals = document.querySelectorAll('.reveal');
-
-function revealOnScroll(){
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const top = el.getBoundingClientRect().top;
-
-    if(top < windowHeight - 100){
-      el.classList.add('active');
+        if(top < windowHeight - 100){
+          el.classList.add('active');
+        }
+      });
     }
-  });
-}
 
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
 
-</script>
+  </script>
 
 </body>
 </html>
