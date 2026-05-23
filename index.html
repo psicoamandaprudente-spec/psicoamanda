@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amanda Prudente | Avaliação Neuropsicológica</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --off:#F7F2EC;
+      --terracotta:#A45B45;
+      --navy:#132235;
+      --gold:#C8A96B;
+      --teal:#168C88;
+      --text:#2E2E2E;
+      --white:#ffffff;
+      --shadow:0 20px 50px rgba(0,0,0,.08);
+      --radius:24px;
+      --transition:.4s ease;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      background:var(--off);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(1180px, 92%);
+      margin:auto;
+    }
+
+    h1,h2,h3,h4{
+      font-family:'Cormorant Garamond', serif;
+      line-height:1.05;
+      color:var(--navy);
+    }
+
+    h1{
+      font-size:clamp(3rem,6vw,6rem);
+      font-weight:700;
+    }
+
+    h2{
+      font-size:clamp(2.4rem,4vw,4.2rem);
+      margin-bottom:20px;
+    }
+
+    h3{
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+
+    p{
+      line-height:1.8;
+      font-size:1.05rem;
+      color:#4d4d4d;
+    }
+
+    section{
+      padding:100px 0;
+      position:relative;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      background:var(--teal);
+      color:white;
+      padding:18px 34px;
+      border-radius:100px;
+      text-decoration:none;
+      font-weight:600;
+      transition:var(--transition);
+      box-shadow:0 12px 30px rgba(22,140,136,.2);
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      background:#11706d;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:100px;
+      background:rgba(200,169,107,.12);
+      color:var(--gold);
+      font-weight:600;
+      margin-bottom:24px;
+      letter-spacing:.5px;
+      font-size:.9rem;
+    }
+
+    /* NAV */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:999;
+      backdrop-filter:blur(14px);
+      background:rgba(247,242,236,.75);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+
+    .nav-wrap{
+      height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:700;
+      color:var(--navy);
+      font-size:1.1rem;
+    }
+
+    .logo img{
+      width:52px;
+      height:52px;
+      object-fit:contain;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:var(--navy);
+      font-weight:500;
+      transition:var(--transition);
+    }
+
+    .nav-links a:hover{
+      color:var(--terracotta);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+      radial-gradient(circle at top left, rgba(22,140,136,.18), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(164,91,69,.12), transparent 30%),
+      var(--off);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .hero h1{
+      margin-bottom:28px;
+    }
+
+    .hero p{
+      font-size:1.15rem;
+      margin-bottom:36px;
+      max-width:650px;
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg, var(--navy), #1f3857);
+      border-radius:36px;
+      padding:50px;
+      color:white;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+      top:-120px;
+      right:-80px;
+    }
+
+    .hero-card h3{
+      color:white;
+      margin-bottom:18px;
+      font-size:2.3rem;
+    }
+
+    .hero-list{
+      margin-top:30px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .hero-list div{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      line-height:1.6;
+    }
+
+    /* PROBLEMAS */
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:60px;
+    }
+
+    .problem-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .problem-card{
+      background:white;
+      border-radius:28px;
+      padding:36px;
+      transition:var(--transition);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,.04);
+    }
+
+    .problem-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .icon{
+      width:64px;
+      height:64px;
+      border-radius:18px;
+      background:rgba(22,140,136,.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.8rem;
+      margin-bottom:24px;
+    }
+
+    /* O QUE É */
+
+    .about-neuro{
+      background:var(--navy);
+      color:white;
+    }
+
+    .about-neuro h2,
+    .about-neuro h3{
+      color:white;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about-box{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      padding:40px;
+      margin-top:26px;
+    }
+
+    /* PARA QUEM */
+
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
+    }
+
+    .persona-card{
+      background:white;
+      padding:40px;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .persona-card::after{
+      content:"";
+      position:absolute;
+      width:160px;
+      height:160px;
+      background:rgba(22,140,136,.06);
+      border-radius:50%;
+      top:-70px;
+      right:-70px;
+    }
+
+    .persona-card ul{
+      margin-top:18px;
+      padding-left:18px;
+      line-height:2;
+      color:#555;
+    }
+
+    /* PROCESSO */
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:20px;
+      margin-top:50px;
+    }
+
+    .step{
+      background:white;
+      padding:32px 24px;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      position:relative;
+    }
+
+    .step-number{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:var(--terracotta);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 20px;
+      font-weight:700;
+    }
+
+    /* DIFERENCIAIS */
+
+    .dark{
+      background:#efe7de;
+    }
+
+    .diff-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .diff{
+      background:white;
+      border-left:5px solid var(--gold);
+      border-radius:22px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    /* DEPOIMENTOS */
+
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .testimonial{
+      background:white;
+      padding:36px;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .testimonial::before{
+      content:"“";
+      position:absolute;
+      top:16px;
+      left:24px;
+      font-size:5rem;
+      color:rgba(22,140,136,.1);
+      font-family:serif;
+    }
+
+    .testimonial strong{
+      display:block;
+      margin-top:24px;
+      color:var(--navy);
+    }
+
+    /* FAQ */
+
+    .faq{
+      max-width:900px;
+      margin:auto;
+    }
+
+    .faq-item{
+      background:white;
+      border-radius:22px;
+      margin-bottom:18px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .faq-question{
+      padding:24px 28px;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-weight:600;
+      color:var(--navy);
+    }
+
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .4s ease;
+      padding:0 28px;
+    }
+
+    .faq-item.active .faq-answer{
+      max-height:300px;
+      padding:0 28px 28px;
+    }
+
+    /* PSICOTERAPIA */
+
+    .therapy{
+      background:linear-gradient(to bottom right, #fff, #f4ede7);
+    }
+
+    .therapy-box{
+      background:white;
+      border-radius:34px;
+      padding:60px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+      box-shadow:var(--shadow);
+    }
+
+    /* CTA */
+
+    .cta{
+      background:linear-gradient(135deg, var(--terracotta), #7d4332);
+      text-align:center;
+      color:white;
+    }
+
+    .cta h2{
+      color:white;
+      max-width:850px;
+      margin:auto;
+      margin-bottom:26px;
+    }
+
+    .cta p{
+      color:rgba(255,255,255,.9);
+      margin-bottom:34px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:var(--navy);
+      color:white;
+      padding:60px 0;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:40px;
+    }
+
+    footer h4{
+      color:white;
+      margin-bottom:18px;
+      font-size:1.4rem;
+    }
+
+    footer p,
+    footer a{
+      color:rgba(255,255,255,.75);
+      text-decoration:none;
+      line-height:2;
+    }
+
+    /* WHATS */
+
+    .whatsapp{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      z-index:999;
+      width:74px;
+      height:74px;
+      border-radius:50%;
+      background:var(--teal);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 15px 40px rgba(0,0,0,.2);
+      transition:var(--transition);
+    }
+
+    .whatsapp:hover{
+      transform:scale(1.08);
+    }
+
+    .whatsapp img{
+      width:48px;
+      height:48px;
+      object-fit:contain;
+    }
+
+    /* REVEAL */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:980px){
+
+      .hero-grid,
+      .about-grid,
+      .therapy-box,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .problem-grid,
+      .cards-3,
+      .testimonials,
+      .diff-grid,
+      .steps{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:120px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .therapy-box{
+        padding:40px 28px;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      h1{
+        font-size:3.3rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-wrap">
+      <div class="logo">
+        <img src="/mnt/data/c81f8978-cf0f-4fa5-b09d-dec221bfd78c(1).png" alt="Logo">
+        Amanda Prudente
+      </div>
+
+      <div class="nav-links">
+        <a href="#avaliacao">Avaliação Neuro</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#faq">FAQ</a>
+        <a href="#psicoterapia">Psicoterapia</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div class="reveal">
+        <span class="badge">AVALIAÇÃO NEUROPSICOLÓGICA</span>
+
+        <h1>
+          Clareza que muda tudo:
+          descubra o que está por trás das dificuldades.
+        </h1>
+
+        <p>
+          Dificuldades escolares, desatenção, suspeita de TDAH, autismo,
+          ansiedade ou problemas emocionais podem ter explicações muito além
+          do que parece. A Avaliação Neuropsicológica ajuda você a entender o
+          funcionamento cognitivo, emocional e comportamental de forma profunda,
+          estruturada e humanizada.
+        </p>
+
+        <a class="btn" href="https://wa.me/5500000000000" target="_blank">
+          Agendar conversa no WhatsApp
+        </a>
+      </div>
+
+      <div class="hero-card reveal">
+        <h3>
+          Um diagnóstico claro pode transformar anos de sofrimento em direção.
+        </h3>
+
+        <p style="color:rgba(255,255,255,.85)">
+          A avaliação não é apenas um laudo. É um processo que oferece respostas,
+          orientações e caminhos concretos para escolas, médicos, famílias e para
+          o próprio paciente.
+        </p>
+
+        <div class="hero-list">
+          <div>✔️ Relatório detalhado e personalizado</div>
+          <div>✔️ Processo completo e estruturado</div>
+          <div>✔️ Atendimento para crianças, adolescentes e adultos</div>
+          <div>✔️ Devolutiva humanizada e acolhedora</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section>
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="badge">SINAIS DE ALERTA</span>
+        <h2>Você se identifica com algum desses cenários?</h2>
+        <p>
+          Muitas pessoas convivem durante anos com dificuldades sem entender
+          exatamente o motivo. A Avaliação Neuropsicológica ajuda a encontrar respostas.
+        </p>
+      </div>
+
+      <div class="problem-grid">
+
+        <div class="problem-card reveal">
+          <div class="icon">🧠</div>
+          <h3>Dificuldade de aprendizagem</h3>
+          <p>
+            Crianças inteligentes que apresentam baixo rendimento escolar,
+            dificuldade de leitura, escrita ou matemática.
+          </p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="icon">📚</div>
+          <h3>Suspeita de TDAH ou TEA</h3>
+          <p>
+            Desatenção, impulsividade, hiperatividade, dificuldade social ou
+            comportamentos repetitivos.
+          </p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="icon">⚡</div>
+          <h3>Problemas de atenção e memória</h3>
+          <p>
+            Esquecimentos frequentes, dificuldade de concentração ou sensação
+            constante de cansaço mental.
+          </p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="icon">💬</div>
+          <h3>Dificuldades emocionais</h3>
+          <p>
+            Ansiedade, irritabilidade, baixa autoestima e sofrimento emocional
+            que impactam o dia a dia.
+          </p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="icon">🏫</div>
+          <h3>Queixas escolares</h3>
+          <p>
+            Reclamações constantes da escola, dificuldade em acompanhar a turma
+            ou baixo desempenho.
+          </p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="icon">👨‍💼</div>
+          <h3>Adultos buscando respostas</h3>
+          <p>
+            Pessoas que passaram a vida sentindo dificuldade de organização,
+            foco ou rendimento profissional.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE É -->
+  <section class="about-neuro" id="avaliacao">
+    <div class="container about-grid">
+
+      <div class="reveal">
+        <span class="badge">ENTENDA O PROCESSO</span>
+        <h2>O que é a Avaliação Neuropsicológica?</h2>
+
+        <p style="color:rgba(255,255,255,.85)">
+          A Avaliação Neuropsicológica é um processo clínico completo que investiga
+          funções cognitivas, emocionais e comportamentais para compreender como o cérebro funciona.
+        </p>
+
+        <div class="about-box">
+          <h3>Mais do que uma consulta.</h3>
+
+          <p style="color:rgba(255,255,255,.85)">
+            Diferente de atendimentos rápidos ou superficiais, a avaliação utiliza
+            entrevistas, testes específicos e análise clínica aprofundada para gerar
+            um entendimento preciso das dificuldades e potencialidades do paciente.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="about-box">
+          <h3>Por que ela faz diferença?</h3>
+
+          <p style="color:rgba(255,255,255,.85)">
+            Quando existe clareza sobre o que realmente acontece, decisões importantes
+            deixam de ser tomadas no escuro. A avaliação ajuda famílias, escolas,
+            médicos e o próprio paciente a seguirem com segurança.
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3>O que você recebe?</h3>
+
+          <p style="color:rgba(255,255,255,.85)">
+            Um relatório técnico detalhado, orientações práticas, devolutiva humanizada
+            e direcionamentos personalizados para tratamento, escola e rotina.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section>
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="badge">PARA QUEM É INDICADA</span>
+        <h2>Avaliação para cada fase da vida.</h2>
+      </div>
+
+      <div class="cards-3">
+
+        <div class="persona-card reveal">
+          <h3>Crianças</h3>
+          <p>
+            Identificação precoce de dificuldades e desenvolvimento.
+          </p>
+
+          <ul>
+            <li>Dificuldade escolar</li>
+            <li>Suspeita de TDAH/TEA</li>
+            <li>Problemas de comportamento</li>
+            <li>Atrasos no desenvolvimento</li>
+          </ul>
+        </div>
+
+        <div class="persona-card reveal">
+          <h3>Adolescentes</h3>
+          <p>
+            Apoio para rendimento acadêmico e questões emocionais.
+          </p>
+
+          <ul>
+            <li>Queda de desempenho</li>
+            <li>Dificuldade de concentração</li>
+            <li>Ansiedade e autoestima</li>
+            <li>Preparação para vestibular</li>
+          </ul>
+        </div>
+
+        <div class="persona-card reveal">
+          <h3>Adultos</h3>
+          <p>
+            Entenda padrões que impactam sua vida pessoal e profissional.
+          </p>
+
+          <ul>
+            <li>Suspeita de TDAH</li>
+            <li>Desorganização constante</li>
+            <li>Esquecimentos frequentes</li>
+            <li>Dificuldade de produtividade</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="dark" id="como-funciona">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="badge">PROCESSO ESTRUTURADO</span>
+        <h2>Como funciona a Avaliação Neuropsicológica?</h2>
+
+        <p>
+          Um processo cuidadoso, completo e pensado para trazer respostas reais.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step reveal">
+          <div class="step-number">1</div>
+          <h3>Contato Inicial</h3>
+          <p>Conversa para entender as principais queixas e necessidades.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">2</div>
+          <h3>Anamnese</h3>
+          <p>Entrevista aprofundada sobre histórico e desenvolvimento.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">3</div>
+          <h3>Testagens</h3>
+          <p>Aplicação de testes e instrumentos específicos.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">4</div>
+          <h3>Análise Clínica</h3>
+          <p>Integração dos dados com interpretação técnica cuidadosa.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">5</div>
+          <h3>Devolutiva</h3>
+          <p>Entrega do relatório e orientações práticas personalizadas.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section>
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="badge">DIFERENCIAIS</span>
+        <h2>Por que escolher este atendimento?</h2>
+      </div>
+
+      <div class="diff-grid">
+
+        <div class="diff reveal">
+          <h3>Relatório completo</h3>
+          <p>
+            Documento detalhado, claro e útil para escolas, médicos e família.
+          </p>
+        </div>
+
+        <div class="diff reveal">
+          <h3>Atendimento humanizado</h3>
+          <p>
+            Escuta acolhedora e respeito à individualidade de cada paciente.
+          </p>
+        </div>
+
+        <div class="diff reveal">
+          <h3>Direcionamento prático</h3>
+          <p>
+            Orientações reais para melhorar rotina, aprendizagem e qualidade de vida.
+          </p>
+        </div>
+
+        <div class="diff reveal">
+          <h3>Integração multidisciplinar</h3>
+          <p>
+            Comunicação com outros profissionais quando necessário.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="dark">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="badge">DEPOIMENTOS</span>
+        <h2>Histórias de transformação.</h2>
+      </div>
+
+      <div class="testimonials">
+
+        <div class="testimonial reveal">
+          <p>
+            Depois da avaliação entendemos que nosso filho tinha dislexia.
+            Pela primeira vez a escola conseguiu adaptar as atividades e ele voltou
+            a gostar de estudar.
+          </p>
+
+          <strong>Mariana, mãe de criança de 9 anos</strong>
+        </div>
+
+        <div class="testimonial reveal">
+          <p>
+            Passei a vida inteira me sentindo desorganizado e improdutivo.
+            A avaliação trouxe clareza sobre meu TDAH e mudou completamente minha rotina.
+          </p>
+
+          <strong>Lucas, 32 anos</strong>
+        </div>
+
+        <div class="testimonial reveal">
+          <p>
+            O relatório foi extremamente detalhado e ajudou muito no acompanhamento
+            médico e escolar da minha filha.
+          </p>
+
+          <strong>Fernanda, mãe de adolescente</strong>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="badge">DÚVIDAS FREQUENTES</span>
+        <h2>Perguntas comuns sobre a Avaliação Neuropsicológica</h2>
+      </div>
+
+      <div class="faq">
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Quanto tempo dura a avaliação?
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              O processo pode variar conforme cada caso, mas geralmente acontece
+              ao longo de algumas sessões estruturadas.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Quantas sessões são necessárias?
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Depende da demanda clínica e da complexidade do caso. Tudo é explicado
+              no primeiro contato.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            O que é entregue no final?
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Você recebe um relatório técnico detalhado com resultados,
+              interpretações e orientações práticas.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            O laudo tem validade?
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Sim. O documento pode ser utilizado para acompanhamento médico,
+              escolar e outros encaminhamentos necessários.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Plano de saúde cobre?
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Alguns planos permitem reembolso parcial. Consulte as regras da sua operadora.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PSICOTERAPIA -->
+  <section class="therapy" id="psicoterapia">
+    <div class="container">
+
+      <div class="therapy-box reveal">
+
+        <div>
+          <span class="badge">PSICOTERAPIA</span>
+
+          <h2>
+            Psicoterapia com acolhimento e profundidade.
+          </h2>
+
+          <p style="margin-top:20px">
+            Além da Avaliação Neuropsicológica, também é realizado atendimento
+            psicoterapêutico para crianças, adolescentes e adultos.
+          </p>
+
+          <p style="margin-top:16px">
+            Um espaço seguro para trabalhar emoções, autoestima, ansiedade,
+            relacionamentos e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div>
+          <div class="about-box" style="background:var(--navy)">
+            <h3 style="color:white">
+              Atendimento humanizado
+            </h3>
+
+            <p style="color:rgba(255,255,255,.85)">
+              Cada processo terapêutico é construído respeitando a história,
+              o tempo e as necessidades individuais de cada paciente.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container reveal">
+
+      <h2>
+        Quanto antes você entende a origem das dificuldades,
+        mais rápido consegue transformar a realidade.
+      </h2>
+
+      <p>
+        Dê o primeiro passo e agende uma conversa.
+      </p>
+
+      <a class="btn" href="https://wa.me/5500000000000" target="_blank">
+        Falar no WhatsApp
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+
+      <div>
+        <h4>Amanda Prudente</h4>
+
+        <p>
+          Psicóloga | Avaliação Neuropsicológica e Psicoterapia
+        </p>
+
+        <p>
+          CRP 00/00000
+        </p>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+
+        <p>(00) 00000-0000</p>
+        <p>contato@seudominio.com</p>
+      </div>
+
+      <div>
+        <h4>Localização</h4>
+
+        <p>Campinas - SP</p>
+        <p>Atendimento presencial e online</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- WHATS -->
+  <a class="whatsapp" href="https://wa.me/5500000000000" target="_blank">
+    <img src="/mnt/data/c81f8978-cf0f-4fa5-b09d-dec221bfd78c(1).png" alt="WhatsApp">
+  </a>
+
+  <script>
+
+    // FAQ
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // REVEAL
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll(){
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const top = el.getBoundingClientRect().top;
+
+        if(top < windowHeight - 100){
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+  </script>
+
+</body>
+</html>
